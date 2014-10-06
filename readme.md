@@ -1,4 +1,4 @@
-# Purple Group Meteor Boilerplate
+# Meteor Boilerplate
 
 This is a bare-bones Meteor app that demonstrates a logical structure and shows some very useful packages. This project is a good base for rapid prototyping.
 
