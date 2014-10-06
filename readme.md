@@ -14,7 +14,7 @@ This is a bare-bones Meteor app that demonstrates a logical structure and shows 
 			* edit - create or update a post
 			* index - list all posts
 			* single - view a post in detail
-		* user - 
+		* user - manage Meteor's user collection
 			* index - admin page for setting roles
 * collections - available globally
 * server - only available to the server
