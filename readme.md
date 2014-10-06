@@ -37,12 +37,12 @@ The autopublish and insecure packages have been removed because we want control 
 
 ## Data Flow
 
-Collection - Define the collection and access rights.
-Publish - Define sets of records to be sent to the client.
-Subscribe - Request a publication from the server.
-Data - Use the subscribed records to send data to the template.
-Router - Connects subscriptions, data and templates to a URL path in the app.
-Template - Render the supplied data.
+* Collection - Define the collection and access rights.
+* Publish - Define sets of records to be sent to the client.
+* Subscribe - Request a publication from the server.
+* Data - Use the subscribed records to send data to the template.
+* Router - Connects subscriptions, data and templates to a URL path in the app.
+* Template - Render the supplied data.
 
 
 ## Iron Router
