@@ -4,15 +4,15 @@
 Meteor.startup(function () {
 
 	var users = [
-		{username: 'ollie',	email: 'oliver@purplegroup.com', password: 'ollie'}
+		{email: 'oliver@purplegroup.com', password: 'ollie'}
 	];
 
 	for (var i=0; i<users.length; i++) {
 		var user = users[i];
-		if (Meteor.users.find({username: user.username}).count() < 1) {
+		if (Meteor.users.find({emails: {$elemMatch: {address: user.email}}}).count() === 0) {
 			var id = Accounts.createUser(user);
 			Roles.addUsersToRoles(id, 'admin');
-			console.log('Created user', user.username);
+			console.log('Created user', user.email);
 		}
 	}
 
