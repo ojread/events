@@ -9,10 +9,10 @@ mrt:bootstrap-3
 mrt:accounts-ui-bootstrap-3-blaze
 accounts-password
 alanning:roles
-mrt:iron-router-progress
 mrt:publish-with-relations
 mrt:twit
 mrt:moment
 ejson
 chaosbohne:twitter-text
+multiply:iron-router-progress
 

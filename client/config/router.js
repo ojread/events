@@ -1,22 +1,19 @@
-// Set basic router templates.
+// Set router and router progress options.
 Router.configure({
 	layoutTemplate: 'layout',
-	notFoundTemplate: 'notFound'
-});
-
-// Tell it to wait for data to be ready.
-Router.onBeforeAction('loading');
-
-// Configure the loading bar.
-IronRouterProgress.configure({
-	delay: 100 // Delay it on fast routes.
+	notFoundTemplate: 'notFound',
+	progressDebug: false,
+	progressDelay: 100
 });
 
 // Restrict access except on public pages.
-Router.onBeforeAction(function (pause) {
+// Data security should be done server-side, this is simply to
+// guide anonymous users to where they should be.
+Router.onBeforeAction(function () {
 	if (!Roles.userIsInRole(Meteor.user(), 'admin')) {
 		this.redirect('home');
-		pause();
 	}
-	return true;
-}, {except: ['home', 'venueAgenda', 'tweetDisplay']});
+	this.next();
+}, {
+	except: ['home', 'venueAgenda', 'tweetDisplay']
+});
