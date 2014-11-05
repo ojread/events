@@ -1,0 +1,18 @@
+<template name="tweetIndex">
+	<div class="page-header">
+		<h1>All tweets <a class="btn btn-primary" href="{{pathFor 'tweetDisplay'}}">Fullscreen</a> <button id="clearTweets" class="btn btn-danger">Clear tweets</button></h1>
+	</div>
+	
+	{{#each tweets}}
+		{{> tweetIndexItem}}
+	{{else}}
+		<p>No tweets</p>
+	{{/each}}
+</template>
+
+<template name="tweetIndexItem">
+	<div class="well">
+		{{user.name}} @{{user.screen_name}}: {{text}}
+		<button class="delete btn btn-danger">Delete</button>
+	</div>
+</template>

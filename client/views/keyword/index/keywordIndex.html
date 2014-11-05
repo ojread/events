@@ -1,0 +1,26 @@
+<template name="keywordIndex">
+	<div class="page-header">
+		<h1>Keywords <button id="createKeyword" class="btn btn-primary">New</button></h1>
+	</div>
+	<table class="table table-striped">
+		<tbody>
+			{{#each keywords}}
+				{{> keywordIndexItem}}
+			{{else}}
+				<tr>
+					<td>No keywords</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="keywordIndexItem">
+	<tr>
+		<td>{{keyword}}</td>
+		<td>
+			<!-- <a class="btn btn-primary" href="{{pathFor 'tweetKeyword' keyword=keyword}}">Display tweets</a> -->
+			<button class="removeKeyword btn btn-danger">Delete</button>
+		</td>
+	</tr>
+</template>

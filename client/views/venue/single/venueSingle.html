@@ -1,0 +1,33 @@
+<template name="venueSingle">
+	{{#with venue}}
+		<div class="page-header">
+			<h1>
+				Venue: {{title}}
+				{{#if isInRole 'admin'}}
+					<a class="btn btn-primary" href="{{pathFor 'venueEdit'}}">Edit</a>
+				{{/if}}
+				<a class="btn btn-success" href="{{pathFor 'venueAgenda'}}">Live agenda</a>
+			</h1>
+		</div>
+	{{/with}}
+
+	<h2>Sessions</h2>
+	<table class="table table-striped">
+		<tbody>
+			{{#each sessionTimes}}
+				{{> venueSingleSessionTime}}
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="venueSingleSessionTime">
+	<tr>
+		<td>{{formatDate start}}</td>
+		<td>{{formatTime start}} - {{formatTime end}}</td>
+		<td>{{title}}</td>
+		{{#if isInRole 'admin'}}
+			<td><a class="btn btn-default" href="{{pathFor 'sessionSingle' _id=sessionId}}">View</a></td>
+		{{/if}}
+	</tr>
+</template>

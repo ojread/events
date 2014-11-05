@@ -1,16 +1,15 @@
 Router.map(function () {
-	this.route('home', {
-		path: '/',
+	// List all keywords
+	this.route('keywordIndex', {
+		path: '/keywords',
 		waitOn: function () {
 			return [
-				Meteor.subscribe('venues'),
 				Meteor.subscribe('keywords')
 			];
 		},
 		data: function () {
 			return {
-				venues: Venues.find({}, {sort: {title: 1}}),
-				keywords: Keywords.find()
+				keywords: Keywords.find().fetch()
 			};
 		}
 	});

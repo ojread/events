@@ -1,0 +1,54 @@
+<template name="eventSingle">
+	{{#with event}}
+		<div class="page-header">
+			<h1>
+				Event: {{title}}
+				{{#if isInRole 'admin'}}
+					<a class="btn btn-primary" href="{{pathFor 'eventEdit'}}">Edit</a>
+				{{/if}}
+			</h1>
+			<p>{{formatDate start}} - {{formatDate end}}</p>
+		</div>
+	{{/with}}
+
+	<div class="row">
+
+		<div class="col-sm-6">
+			<h2>
+				Venues
+				{{#if isInRole 'admin'}}
+					<a class="btn btn-primary" href="{{pathFor 'venueCreate' eventId=event._id}}">New</a>
+				{{/if}}
+			</h2>
+			<div class="list-group">
+				{{#each venues}}
+					<a id="{{_id}}" class="list-group-item" href="{{pathFor 'venueSingle'}}">
+						{{title}}
+					</a>
+				{{else}}
+					<a class="list-group-item disabled">No venues</a>
+				{{/each}}
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<h2>
+				Sessions
+				{{#if isInRole 'admin'}}
+					<a class="btn btn-primary" href="{{pathFor 'sessionCreate' eventId=event._id}}">New</a>
+					<button id="importSessions" class="btn btn-danger">Reset</button>
+				{{/if}}
+			</h2>
+			<div class="list-group">
+				{{#each sessions}}
+					<a id="{{_id}}" class="list-group-item" href="{{pathFor 'sessionSingle'}}">
+						{{title}}
+					</a>
+				{{else}}
+					<a class="list-group-item disabled">No sessions</a>
+				{{/each}}
+			</div>
+		</div>
+	</div>
+
+</template>

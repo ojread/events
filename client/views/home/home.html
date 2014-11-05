@@ -1,6 +1,36 @@
 <template name="home">
 	<div class="page-header">
-		<h1>Home</h1>
+		<h1>Purple Group Events</h1>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			<h2>Live agendas</h2>
+			<div class="list-group">
+				{{#each venues}}
+					<a id="{{_id}}" class="list-group-item" href="{{pathFor 'venueAgenda'}}">
+						{{title}}
+					</a>
+				{{else}}
+					<a class="list-group-item disabled">No venues</a>
+				{{/each}}
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<h2>Twitter feed</h2>
+			<a class="btn btn-primary" href="{{pathFor 'tweetDisplay'}}">Display tweets</a>
+			
+			<!-- <h2>Twitter keywords</h2>
+			<div class="list-group">
+				{{#each keywords}}
+					<a id="{{_id}}" class="list-group-item" href="{{pathFor 'tweetKeyword' keyword=keyword}}">
+						{{keyword}}
+					</a>
+				{{else}}
+					<a class="list-group-item disabled">No keywords</a>
+				{{/each}}
+			</div> -->
+		</div>
 	</div>
 
 </template>

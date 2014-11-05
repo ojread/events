@@ -1,0 +1,21 @@
+<template name="sessionEdit">
+	<div class="page-header">
+		{{#if session}}
+			<h1>Edit session</h1>
+		{{else}}
+			<h1>New session</h1>
+		{{/if}}
+	</div>
+
+	<form id="sessionEditForm" role="form">
+		<div class="form-group">
+			<label for="title">Title</label>
+			<input id="title" class="form-control" type="text" value= {{session.title}}>
+		</div>
+		<div class="form-group">
+			<label for="description">Description</label>
+			<textarea id="description" class="form-control" rows="5">{{session.description}}</textarea>
+		</div>
+		<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+</template>

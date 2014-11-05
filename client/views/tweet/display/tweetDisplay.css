@@ -1,0 +1,29 @@
+.tweet {
+	display: none;
+	position: absolute;
+	font-size: 150%;
+}
+
+.tweet .row {
+	width: 100%;
+}
+
+.tweet small {
+	color: #ddd;
+}
+
+.tweet a {
+	color: #fff;
+}
+
+.tweet .avatar {
+	width: 128px;
+	height: 128px;
+}
+
+.tweet .photo {
+	max-height: 360px;
+	max-width: 360px;
+	padding: 0 15px;
+	margin: 0 auto;
+}

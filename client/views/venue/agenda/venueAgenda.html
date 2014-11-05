@@ -1,0 +1,50 @@
+<template name="venueAgenda">
+	<div class="page-header">
+		<h1>
+			{{venue.title}}
+			<span id="clock" class="pull-right">
+				{{formatTime currentTime}}
+			</span>
+		</h1>
+	</div>
+
+	<div class="row">
+		<div class="col-sm-6">
+			{{#with sessionTimes.[0]}}
+				<h2>Now</h2>
+				{{> venueAgendaSessionTime}}
+			{{else}}
+				<h2>No more sessions today</h2>
+			{{/with}}
+		</div>
+		<div class="col-sm-6">
+			{{#with sessionTimes.[1]}}
+				<h2>Next</h2>
+				{{> venueAgendaSessionTime}}
+			{{/with}}
+		</div>
+	</div>
+</template>
+
+<template name="venueAgendaSessionTime">
+	<!-- <div class="well"> -->
+		<h3>{{session.title}}</h3>
+		<h4>{{formatTime start}} - {{formatTime end}}</h4>
+		<!-- <p>{{session.description}}</p> -->
+
+		{{#if repeats}}
+			<p>Repeat sessions:</p>
+			<ul>
+				{{#each repeats}}
+					{{> venueAgendaRepeat}}
+				{{/each}}
+			</ul>
+		{{/if}}
+	<!-- </div> -->
+</template>
+
+<template name="venueAgendaRepeat">
+	<li>
+		{{calendarTime start}} in {{venueName}}
+	</li>
+</template>

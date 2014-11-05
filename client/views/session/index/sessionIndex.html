@@ -1,0 +1,29 @@
+<template name="sessionIndex">
+	<div class="page-header">
+		<h1>
+			All sessions
+			<!-- <a class="btn btn-primary" href="{{pathFor 'sessionCreate'}}">New</a> -->
+		</h1>
+	</div>
+
+	<table class="table table-striped">
+		<tbody>
+			{{#each sessions}}
+				{{> sessionIndexItem}}
+			{{else}}
+				<tr>
+					<td>No sessions</td>
+				</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="sessionIndexItem">
+	<tr id="{{_id}}">
+		<td>{{title}}</td>
+		<td>
+			<a class="btn btn-primary" href="{{pathFor 'sessionSingle'}}">View</a>
+		</td>
+	</tr>
+</template>

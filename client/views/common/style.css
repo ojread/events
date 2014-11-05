@@ -1,3 +1,28 @@
-ul.tasks li {
-	list-style-type: none;
+html.fullscreen {
+	height: 100%;
+	color: #fff;
+	overflow: hidden;
+
+	/* Background gradient */
+	background: #33324f; /* Old browsers */
+	background: -moz-linear-gradient(top,  #33324f 0%, #74c5c1 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#33324f), color-stop(100%,#74c5c1)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #33324f 0%,#74c5c1 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #33324f 0%,#74c5c1 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #33324f 0%,#74c5c1 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #33324f 0%,#74c5c1 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33324f', endColorstr='#74c5c1',GradientType=0 ); /* IE6-9 */
+}
+
+html.fullscreen body {
+	color: #fff;
+}
+
+body {
+	background: transparent;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+	background: #fff;
 }

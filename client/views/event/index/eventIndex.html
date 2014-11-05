@@ -1,0 +1,35 @@
+<template name="eventIndex">
+	<div class="page-header">
+		<h1>
+			All events
+			{{#if isInRole 'admin'}}
+				<a class="btn btn-primary" href="{{pathFor 'eventCreate'}}">New</a>
+			{{/if}}
+		</h1>
+	</div>
+	
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Start date</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each eventList}}
+				{{> eventIndexItem}}
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="eventIndexItem">
+	<tr id="{{_id}}">
+		<td>{{title}}</td>
+		<td>{{formatDate start}}</td>
+		<td>
+			<a class="btn btn-primary" href="{{pathFor 'eventSingle'}}">View</a>
+		</td>
+	</tr>
+</template>

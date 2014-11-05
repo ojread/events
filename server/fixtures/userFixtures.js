@@ -4,9 +4,7 @@
 Meteor.startup(function () {
 
 	var users = [
-		{username: 'ollie',	email: 'oliver@purplegroup.com', password: 'ollie'},
-		{username: 'will',	email: 'william@purplegroup.com', password: 'will'},
-		{username: 'dylan',	email: 'dylan@purplegroup.com', password: 'dylan'}
+		{username: 'ollie',	email: 'oliver@purplegroup.com', password: 'ollie'}
 	];
 
 	for (var i=0; i<users.length; i++) {

@@ -1,0 +1,29 @@
+<template name="venueIndex">
+	<div class="page-header">
+		<h1>
+			All venues
+			<!-- <a class="btn btn-primary" href="{{pathFor 'venueCreate'}}">New</a> -->
+		</h1>
+	</div>
+
+	<table class="table table-striped">
+		<tbody>
+			{{#each venues}}
+				{{> venueIndexItem}}
+			{{else}}
+					<tr>
+						<td>No venues</td>
+					</tr>
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="venueIndexItem">
+	<tr id="{{_id}}">
+		<td>{{title}}</td>
+		<td>
+			<a class="btn btn-primary" href="{{pathFor 'venueSingle'}}">View</a>
+		</td>
+	</tr>
+</template>

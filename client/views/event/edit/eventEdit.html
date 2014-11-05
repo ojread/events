@@ -1,0 +1,30 @@
+<template name="eventEdit">
+	<div class="page-header">
+		{{#if event}}
+			<h1>Edit event</h1>
+		{{else}}
+			<h1>New event</h1>
+		{{/if}}
+	</div>
+
+	<form id="eventEditForm" role="form">
+		<div class="form-group">
+			<label for="title">Title</label>
+			<input id="title" class="form-control" type="text" value={{event.title}}>
+		</div>
+		<div class="form-group">
+			<label for="start">Start</label>
+			<input id="start" class="form-control" type="date" value={{event.start}}>
+		</div>
+		<div class="form-group">
+			<label for="end">End</label>
+			<input id="end" class="form-control" type="date" value={{event.end}}>
+		</div>
+		<!-- <div class="form-group">
+			<label for="keyword">Twitter hashtag</label>
+			<input id="keyword" class="form-control" type="text" value={{keyword.keyword}}>
+		</div> -->
+		<button type="submit" class="btn btn-primary">Save</button>
+	</form>
+
+</template>

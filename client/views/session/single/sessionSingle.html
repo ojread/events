@@ -1,0 +1,49 @@
+<template name="sessionSingle">
+	{{#with session}}
+		<div class="page-header">
+			<h1>
+				Session: {{title}}
+				{{#if isInRole 'admin'}}
+					<a class="btn btn-primary" href="{{pathFor 'sessionEdit'}}">Edit</a>
+					<button id="deleteSession" class="btn btn-danger">Delete</button>
+				{{/if}}
+			</h1>
+		</div>
+		<p>{{description}}</p>
+	{{/with}}
+
+	<h2>
+		Session times
+	</h2>
+	{{#each sessionTimes}}
+		{{> sessionSingleTime}}
+	{{/each}}
+	{{#if isInRole 'admin'}}
+		{{> sessionSingleTime}}
+	{{/if}}
+
+</template>
+
+<template name="sessionSingleTime">
+	{{#unless _id}}
+		<h3>Insert new time</h3>
+	{{/unless}}
+	<p>
+		<form id="{{_id}}" class="sessionTimeForm form-inline" role="form">
+			<input class="date form-control" type="date" value="{{formatDateInput start}}">
+			<input class="startTime form-control" type="time" value="{{formatTime start}}">
+			<input class="endTime form-control" type="time" value="{{formatTime end}}">
+			<select class="venueId form-control">
+				{{#each venues}}
+					<option value="{{_id}}" {{venueSelected ../venueId}}>{{title}}</option>
+				{{/each}}
+			</select>
+			{{#if isInRole 'admin'}}
+				<input class="save btn btn-primary" type="submit" value="Save">
+				{{#if _id}}
+					<input class="removeSessionTime btn btn-danger" type="button" value="Delete">
+				{{/if}}
+			{{/if}}
+		</form>
+	</p>
+</template>
