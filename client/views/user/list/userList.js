@@ -1,4 +1,4 @@
-Template.userIndexItem.helpers({
+Template.userListItem.helpers({
 	roleSelected: function (role) {
 		if (this.roles) {
 			if (this.roles[0]) {
@@ -10,7 +10,7 @@ Template.userIndexItem.helpers({
 	}
 });
 
-Template.userIndexItem.events({
+Template.userListItem.events({
 	'change select.userRole': function (e) {
 		var role = $(e.target).val();
 		Meteor.call('setUserRoles', this._id, [role]);

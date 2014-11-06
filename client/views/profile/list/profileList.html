@@ -1,0 +1,26 @@
+<template name="profileList">
+	<div class="page-header">
+		<h1>Profiles</h1>
+	</div>
+
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Company</th>
+			</tr>
+		</thead>
+		<tbody>
+			{{#each users}}
+				{{> profileListItem}}
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="profileListItem">
+	<tr>
+		<td>{{#each emails}}{{address}} {{/each}}</td>
+		<td><a class="btn btn-default" href="{{pathFor 'profileView'}}">View</a></td>
+	</tr>
+</template>

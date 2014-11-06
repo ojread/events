@@ -36,23 +36,29 @@ Logical layout of all site functions.
 
 
 
-
-
-## /users
+## /profiles (profileList)
 - List people that the current user has met.
-- Is there any reason to keep this separate from the built-in
+- Like viewing users but for non-admins.
 
-## /users/userId
+## /profiles/userId (profileView)
 - Show this user's profile, basically a business card. Links to social media sites.
 - This URL can be placed on their namebadge as a QR code.
 - When a signed-in user visits their own profile, give them the option to edit their details.
 - When a signed-in user visits another user's profile, note their meeting so they can look back and find each other.
 - How public should this be? You would need to actually scan their code to find them so it's as controllable as a business card.
 
-## /users/userId/edit
+## /profiles/userId/edit (profileEdit)
 - Update your personal details for others to see on your profile.
 - Enter as much or as little as you like.
 
+
+
+## /users (userList)
+- List all users for admin.
+- Deal with the back-end user settings such as roles/permissions.
+
+## /users/userId (userView)
+- Allow admin to edit user roles.
 
 
 

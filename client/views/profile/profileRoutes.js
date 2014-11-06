@@ -1,7 +1,7 @@
 Router.map(function () {
 
-	this.route('userList', {
-		path: '/users',
+	this.route('profileList', {
+		path: '/profiles',
 		waitOn: function () {
 			return Meteor.subscribe('users');
 		},
@@ -12,8 +12,8 @@ Router.map(function () {
 		}
 	});
 
-	this.route('userView', {
-		path: '/users/:_id',
+	this.route('profileView', {
+		path: '/profiles/:_id',
 		waitOn: function () {
 			return Meteor.subscribe('user', this.params._id);
 		},

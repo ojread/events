@@ -18,11 +18,12 @@
 						<li><a href="{{pathFor 'eventIndex'}}">Events</a></li>
 						<li><a href="{{pathFor 'keywordIndex'}}">Keywords</a></li>
 						<li><a href="{{pathFor 'tweetIndex'}}">Tweets</a></li>
+						<li><a href="{{pathFor 'profileList'}}">Profiles</a></li>
 					{{/if}}
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					{{#if isInRole 'admin'}}
-						<li><a href="{{pathFor 'userIndex'}}">Users</a></li>
+						<li><a href="{{pathFor 'userList'}}">Users</a></li>
 					{{/if}}
 					{{> loginButtons align="right"}}
 				</ul>
