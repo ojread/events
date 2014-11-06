@@ -72,3 +72,20 @@ Emails are sent to the invitees with links back to the app.
 If the event is open to all, they can register themselves. Take payment?
 
 - Each event has a page where you can 
+
+
+
+The event organiser enters the email addresses to send invitations to.
+
+If an email address does not exist in the system, it needs to be added.
+
+Accounts.createUser() - Use the email address to create a new user.
+
+Create an Attendee to connect the user to the event.
+
+Accounts.sendEnrollmentEmail() - Ask the user to set their password.
+
+
+If an email address is owned by an existing user, they need to be invited using their existing account.
+
+So the event invitation process needs to be separate to the account process. 
