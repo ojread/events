@@ -1,4 +1,6 @@
 // Attendee records connect users to events.
+// Also note attendance status - invited, accepted etc.
+
 Attendees = new Mongo.Collection('attendees');
 
 Meteor.methods({
