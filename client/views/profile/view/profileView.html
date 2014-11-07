@@ -1,6 +1,20 @@
 <template name="profileView">
 	<div class="page-header">
-		<h1>Profile</h1>
+		<h1>
+			{{profile.firstName}} {{profile.lastName}} <small>{{profile.company}}</small>
+			{{#if userCanEdit}}
+				<a class="btn btn-primary" href="{{pathFor 'profileEdit' _id}}">Edit profile</a>
+			{{/if}}
+		</h1>
 	</div>
 	<div id="qrcode"></div>
+
+	{{#if profile.phoneNumber}}
+		<p>Phone: {{profile.phoneNumber}}</p>
+	{{/if}}
+
+	{{#each emails}}
+		<p>Email: <a href="mailto:{{address}}">{{address}}</a></p>
+	{{/each}}
+
 </template>

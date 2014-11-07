@@ -27,5 +27,24 @@ Meteor.methods({
 				Roles.setUserRoles(userId, roles);
 			}
 		}
+	},
+
+	'updateProfile': function (userId, firstName, lastName, company, phoneNumber) {
+		if (
+			this.userId === userId ||
+			Roles.userIsInRole(Meteor.userId(), ['admin'])
+		) {
+			check([firstName, lastName, company, phoneNumber], [String]);
+			Meteor.users.update(userId, {
+				$set: {
+					profile: {
+						firstName: firstName,
+						lastName: lastName,
+						company: company,
+						phoneNumber: phoneNumber
+					}
+				}
+			});
+		}
 	}
 });

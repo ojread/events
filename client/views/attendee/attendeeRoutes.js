@@ -1,20 +1,22 @@
 Router.map(function () {
 	this.route('attendeeList', {
-		path: '/event/:eventId/attendees',
+		path: '/events/:eventId/attendees',
 		waitOn: function () {
 			return [
-				Meteor.subscribe('event', this.params.eventId)
+				Meteor.subscribe('event', this.params.eventId),
+				Meteor.subscribe('eventAttendees', this.params.eventId)
 			];
 		},
 		data: function () {
 			return {
-				event: Events.findOne(this.params.eventId)
+				event: Events.findOne(this.params.eventId),
+				attendees: Attendees.find({eventId: this.params.eventId})
 			};
 		}
 	});
 
 	/*this.route('attendeeSingle', {
-		path: '/event/:eventId/attendees/:_id',
+		path: '/events/:eventId/attendees/:_id',
 		waitOn: function () {
 			return [
 				Meteor.subscribe('event', this.params.eventId)

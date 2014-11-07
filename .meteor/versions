@@ -52,7 +52,7 @@ mrt:accounts-ui-bootstrap-3-blaze@0.3.10
 mrt:moment@2.8.1
 mrt:publish-with-relations@0.1.5
 mrt:twit@0.2.0
-multiply:iron-router-progress@1.0.0-pre2
+multiply:iron-router-progress@1.0.0
 npm-bcrypt@0.7.7
 observe-sequence@1.0.3
 ordered-dict@1.0.1
