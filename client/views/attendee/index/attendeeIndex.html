@@ -1,15 +1,11 @@
-<template name="attendeeList">
+<template name="attendeeIndex">
 	<div class="page-header">
 		<h1>
 			Attendees
 			<small>{{event.title}}</small>
-			<a class="btn btn-primary" href="{{pathFor 'eventCreate'}}">New</a>
+			<a class="btn btn-primary" href="{{pathFor 'attendeeCreate' eventId=this.event._id}}">Add attendees</a>
 		</h1>
 	</div>
-
-	<h2>Add attendees</h2>
-
-	
 
 	<table class="table table-striped">
 		<thead>
@@ -26,7 +22,7 @@
 	</table>
 </template>
 
-<template name="attendeeListItem">
+<template name="attendeeIndexItem">
 	<tr id="{{_id}}">
 		<td>{{name}}</td>
 		<td>{{attendee.status}}</td>

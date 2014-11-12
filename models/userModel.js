@@ -22,7 +22,7 @@ Meteor.users.allow({
 Meteor.methods({
 	'setUserRoles': function (userId, roles) {
 		// Check the calling user is admin.
-		if (Roles.userIsInRole(Meteor.userId(), ['admin'])) {
+		if (Roles.userIsInRole(this.userId, ['admin'])) {
 			if (Meteor.userId() !== userId) {
 				Roles.setUserRoles(userId, roles);
 			}
@@ -32,7 +32,7 @@ Meteor.methods({
 	'updateProfile': function (userId, firstName, lastName, company, phoneNumber) {
 		if (
 			this.userId === userId ||
-			Roles.userIsInRole(Meteor.userId(), ['admin'])
+			Roles.userIsInRole(this.userId, ['admin'])
 		) {
 			check([firstName, lastName, company, phoneNumber], [String]);
 			Meteor.users.update(userId, {

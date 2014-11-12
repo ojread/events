@@ -1,0 +1,26 @@
+<template name="profileIndex">
+	<div class="page-header">
+		<h1>
+			Profiles
+			{{#if currentUser}}
+				{{currentUserId}}
+				<a class="btn btn-primary" href="{{pathFor 'profileSingle' _id=currentUser._id}}">My profile</a>
+			{{/if}}
+		</h1>
+	</div>
+
+	<table class="table table-striped">
+		<tbody>
+			{{#each users}}
+				{{> profileIndexItem}}
+			{{/each}}
+		</tbody>
+	</table>
+</template>
+
+<template name="profileIndexItem">
+	<tr>
+		<td>{{profile.firstName}} {{profile.lastName}}, {{profile.company}}</td>
+		<td><a class="btn btn-default" href="{{pathFor 'profileSingle'}}">View</a></td>
+	</tr>
+</template>

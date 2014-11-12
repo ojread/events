@@ -1,8 +1,8 @@
-Template.venueSingle.events({
+Template.venueView.events({
 
 });
 
-Template.venueSingleSessionTime.helpers({
+Template.venueViewSessionTime.helpers({
 	title: function () {
 		return Sessions.findOne(this.sessionId).title;
 	}

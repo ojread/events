@@ -18,7 +18,7 @@ Logical layout of all site functions.
 ## /events/eventId/attendees
 - List people invited to the event. Option to filter non-attendees.
 
-## /events/eventId/invite
+## /events/eventId/attendees/invite
 - Organiser can enter email addresses of people that they want to invite.
 - May want more information - first/last name, organisation so uploading a CSV would be more useful. Where would this info come from in the first place?
 

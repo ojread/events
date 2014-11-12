@@ -1,3 +1,0 @@
-Template.eventIndex.events({
-
-});

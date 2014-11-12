@@ -1,4 +1,4 @@
-<template name="venueSingle">
+<template name="venueView">
 	{{#with venue}}
 		<div class="page-header">
 			<h1>
@@ -21,7 +21,7 @@
 	</table>
 </template>
 
-<template name="venueSingleSessionTime">
+<template name="venueViewSessionTime">
 	<tr>
 		<td>{{formatDate start}}</td>
 		<td>{{formatTime start}} - {{formatTime end}}</td>

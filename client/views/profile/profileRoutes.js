@@ -1,6 +1,6 @@
 Router.map(function () {
 
-	this.route('profileList', {
+	this.route('profileIndex', {
 		path: '/profiles',
 		waitOn: function () {
 			return Meteor.subscribe('users');
@@ -22,7 +22,7 @@ Router.map(function () {
 		}
 	});
 
-	this.route('profileView', {
+	this.route('profileSingle', {
 		path: '/profiles/:_id',
 		waitOn: function () {
 			return Meteor.subscribe('user', this.params._id);

@@ -1,5 +1,5 @@
-Template.profileView.rendered = function () {
-	var url = Router.routes.profileView.url({_id: this.data._id});
+Template.profileSingle.rendered = function () {
+	var url = Router.routes.profileSingle.url({_id: this.data._id});
 	$('#qrcode').qrcode({
 		text: url,
 		width: 128,
@@ -7,7 +7,7 @@ Template.profileView.rendered = function () {
 	});
 };
 
-Template.profileView.helpers({
+Template.profileSingle.helpers({
 
 	userCanEdit: function () {
 		if (Meteor.userId() === this._id ||

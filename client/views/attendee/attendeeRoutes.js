@@ -1,5 +1,5 @@
 Router.map(function () {
-	this.route('attendeeList', {
+	this.route('attendeeIndex', {
 		path: '/events/:eventId/attendees',
 		waitOn: function () {
 			return [
@@ -11,6 +11,22 @@ Router.map(function () {
 			return {
 				event: Events.findOne(this.params.eventId),
 				attendees: Attendees.find({eventId: this.params.eventId})
+			};
+		}
+	});
+
+	this.route('attendeeCreate', {
+		path: '/events/:eventId/attendees/create',
+		waitOn: function () {
+			return [
+				Meteor.subscribe('event', this.params.eventId),
+				Meteor.subscribe('userEmails')
+			];
+		},
+		data: function () {
+			return {
+				event: Events.findOne(this.params.eventId),
+				users: Meteor.users.find()
 			};
 		}
 	});
