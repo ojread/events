@@ -1,0 +1,32 @@
+@lightBG: #007cc2;
+@darkBG: #222964;
+
+html.fullscreen {
+	height: 100%;
+	color: #fff;
+	overflow: hidden;
+
+	background-color: @darkBG;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(@lightBG), to(@darkBG));
+	background: -webkit-linear-gradient(top, @darkBG, @lightBG);
+	background: -moz-linear-gradient(top, @darkBG, @lightBG);
+	background: -ms-linear-gradient(top, @darkBG, @lightBG);
+	background: -o-linear-gradient(top, @darkBG, @lightBG);
+}
+
+html.fullscreen body {
+	color: #fff;
+}
+
+body {
+	background: transparent;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+	background: #fff;
+}
+
+html.fullscreen .container {
+	background: transparent;
+}
